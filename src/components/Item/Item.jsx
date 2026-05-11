@@ -6,7 +6,7 @@ const Item = (props) => {
     return(
         <li>
             {task}
-            <Button></Button>
+            <Button title="Delete"/>
         </li>
     );
 }

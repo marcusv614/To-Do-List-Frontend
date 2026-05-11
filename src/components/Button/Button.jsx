@@ -1,7 +1,8 @@
 import style from "./Button.module.css";
 
-const Button = () => {
-  return <button className={style.Button}>Delete</button>;
+const Button = (props) => {
+  const {title} = props;
+  return <button className={style.Button}>{title}</button>;
 };
 
 export { Button };
