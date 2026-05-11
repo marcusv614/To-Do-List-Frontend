@@ -1,6 +1,8 @@
 body {
-    background-color: rgb(66, 66, 66);
-    display: flex;
-    justify-content: center;
-    gap: 0.25rem;
+  background-color: rgb(66, 66, 66);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 0.25rem;
 }
