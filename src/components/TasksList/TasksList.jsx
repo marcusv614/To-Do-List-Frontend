@@ -1,18 +1,12 @@
 import style from "./TasksList.module.css";
-import { Button } from "../../components";
+import { Item } from "../../components";
 
 const TasksList = () => {
   return (
     <ul className={style.TasksList}>
-      <li>
-        Item 1 <Button></Button>
-      </li>
-      <li>
-        Item 2 <Button></Button>
-      </li>
-      <li>
-        Item 3 <Button></Button>
-      </li>
+      <Item task="Item 1"></Item>
+      <Item task="Item 2"></Item>
+      <Item task="Item 3"></Item>
     </ul>
   );
 };
