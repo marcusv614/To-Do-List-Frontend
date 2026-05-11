@@ -1,5 +1,7 @@
+import style from "./Button.module.css";
+
 const Button = () => {
-  return <button>Delete</button>;
+  return <button className={style.Button}>Delete</button>;
 };
 
 export { Button };
