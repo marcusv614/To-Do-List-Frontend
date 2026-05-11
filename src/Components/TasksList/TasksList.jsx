@@ -5,7 +5,7 @@ const TasksList = () => {
   return (
     <ul className={style.TasksList}>
       <li>
-        Item 1 <Button buttonName="Delete"></Button>
+        Item 1 <Button></Button>
       </li>
       <li>
         Item 2 <Button></Button>
