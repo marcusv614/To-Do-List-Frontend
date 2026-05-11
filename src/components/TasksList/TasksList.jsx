@@ -1,5 +1,5 @@
 import style from "./TasksList.module.css";
-import { Button } from "../Button";
+import { Button } from "../../components";
 
 const TasksList = () => {
   return (

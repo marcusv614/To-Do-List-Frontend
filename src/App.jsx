@@ -1,5 +1,5 @@
 import './App.css'
-import { TasksList } from './Components'
+import { TasksList } from './components'
 
 function App() {
 
