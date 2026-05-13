@@ -1,13 +1,12 @@
-import './App.css'
-import { TasksList } from './components'
+import "./App.css";
+import { Home } from "./pages";
 
 function App() {
-
   return (
     <>
-      <TasksList></TasksList>
+      <Home />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

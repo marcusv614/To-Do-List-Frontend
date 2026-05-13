@@ -1,5 +1,11 @@
-const Home = () => {
-    
-}
+import { TasksList } from "../../components";
 
-export {Home}
+const Home = () => {
+  return (
+    <>
+      <TasksList />
+    </>
+  );
+};
+
+export { Home };
