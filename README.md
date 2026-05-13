@@ -56,3 +56,9 @@ Inicie o projeto:
 ```bash
 npm run dev
 ```
+
+Acesse a URL:
+
+```bash
+http://localhost:5173
+```
