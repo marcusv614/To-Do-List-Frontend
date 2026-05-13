@@ -4,10 +4,19 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: white;
-  background-color: rgb(78, 78, 78);
+  color: rgb(42, 37, 70);
+  background-color: rgba(255, 255, 255, 0.86);
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 40px rgba(65, 55, 130, 0.24);
+  margin: 0;
   padding: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   gap: 0.25rem;
+  transition: background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.TasksList:hover {
+  background-color: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 22px 46px rgba(65, 55, 130, 0.3);
 }

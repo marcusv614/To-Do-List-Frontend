@@ -1,5 +1,23 @@
 .Item {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: 8px;
+  padding: 0.4rem;
+  transition: background-color 180ms ease;
+}
+
+.Item:hover {
+  background-color: rgba(74, 201, 139, 0.18);
+}
+
+.TaskName {
+  flex: 1;
+  min-width: 0;
+}
+
+.DeleteAction {
+  margin-left: auto;
 }

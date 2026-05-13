@@ -1,8 +1,9 @@
 body {
-  background-color: rgb(37, 37, 37);
+  background: linear-gradient(135deg, rgb(206, 255, 213), rgb(74, 201, 139) 55%, rgb(18, 121, 91));
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 320px;
   height: 100vh;
-  gap: 0.25rem;
+  margin: 0;
 }

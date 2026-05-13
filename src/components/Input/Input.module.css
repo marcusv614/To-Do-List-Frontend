@@ -1,7 +1,21 @@
-.Input{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    border: 0;
-    font-family: Arial, Helvetica, sans-serif;
+.Input {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border: 1px solid rgb(104, 184, 255);
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(42, 37, 70);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.55rem 0.75rem;
+  outline: none;
+  transition: background-color 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.Input:hover,
+.Input:focus {
+  background-color: rgb(255, 253, 245);
+  border-color: rgb(255, 154, 67);
+  box-shadow: 0 0 0 3px rgba(255, 154, 67, 0.2);
 }
