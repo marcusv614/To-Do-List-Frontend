@@ -1,10 +1,13 @@
 import { Input, Button } from "../../components";
+import style from "./TaskForm.module.css";
 
 const TaskForm = () => {
   return (
     <>
-      <Input type="text" placeholder="Add Task"></Input>
-      <Button title="+" />
+      <div className={style.TaskForm}>
+        <Input type="text" placeholder="Add Task"></Input>
+        <Button title="Add" />
+      </div>
     </>
   );
 };
