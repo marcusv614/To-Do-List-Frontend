@@ -1,8 +1,9 @@
-import { TasksList } from "../../components";
+import { TasksList, TaskForm } from "../../components";
 
 const Home = () => {
   return (
     <>
+      <TaskForm />
       <TasksList />
     </>
   );
