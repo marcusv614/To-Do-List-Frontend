@@ -1,6 +1,6 @@
 # To Do List Frontend
 
-Frontend de uma aplicação de lista de tarefas desenvolvida com React e Vite. A aplicação permite criar, listar, editar, deletar e reorganizar tasks consumindo uma API externa.
+Frontend de uma aplicação de lista de tarefas desenvolvida com React e Vite. A aplicação permite criar, listar, editar, deletar e reorganizar tasks consumindo uma API Rest (Spring Boot) externa.
 
 ## Preview
 
@@ -13,11 +13,10 @@ Frontend de uma aplicação de lista de tarefas desenvolvida com React e Vite. A
 - JavaScript
 - CSS Modules
 - Axios
-- ESLint
 
 ## Backend
 
-Backend deployado no Render, com API e banco de dados PostgreSQL.
+Deploy do backend no Render, com API Spring Boot e banco de dados PostgreSQL.
 
 API: `https://to-do-list-pe2n.onrender.com`
 
