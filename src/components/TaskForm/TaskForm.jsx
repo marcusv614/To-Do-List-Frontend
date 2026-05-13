@@ -5,7 +5,7 @@ import style from "./TaskForm.module.css";
 import { useState } from "react";
 import { postTask } from "../../service/TaskService";
 
-const TaskForm = () => {
+const TaskForm = ({loadTasks}) => {
   const [taskTitle, setTaskTitle] = useState("");
 
   const handleCreateTask = async (event) => {
@@ -18,7 +18,7 @@ const TaskForm = () => {
 
     try {
       const response = await postTask(taskData);
-
+      await loadTasks();
       console.log("Task Created: ", response.data);
       setTaskTitle("");
     } catch (error) {

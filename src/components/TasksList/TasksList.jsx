@@ -1,28 +1,17 @@
 import style from "./TasksList.module.css";
 import { Item, Button } from "../../components";
+import { useState, useEffect } from "react";
+import { getTasks } from "../../service/TaskService";
 
-const TasksList = () => {
-  const taskArray = [
-    {
-      id: 1,
-      name: "Item 1",
-    },
-    {
-      id: 2,
-      name: "Item 2",
-    },
-    {
-      id: 3,
-      name: "Item 3",
-    },
-  ];
+const TasksList = ({tasksArray}) => {
 
   return (
+    tasksArray.length >0 ?  (
     <ul className={style.TasksList}>
-      {taskArray.map((item) => (
-        <Item key={item.id} task={item.name} />
+      {tasksArray.map((item) => (
+        <Item key={item.id} task={item.title} />
       ))}
-    </ul>
-  );
+    </ul>) : (<></>)
+    );
 };
 export { TasksList };
