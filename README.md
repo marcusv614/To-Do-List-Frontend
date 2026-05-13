@@ -29,6 +29,32 @@ API: `https://to-do-list-pe2n.onrender.com`
 - Uso de props e children.
 - Estilização com CSS Modules.
 
+## Como Funciona
+
+O frontend carrega as tasks da API, exibe a lista na tela e permite criar, editar, deletar e reorganizar os itens. As ações principais disparam requisições HTTP para o backend, mantendo a interface sincronizada com os dados persistidos.
+
+O objetivo do projeto foi aplicar conhecimentos de desenvolvimento fullstack, integrando um frontend em React com um backend em Java e banco PostgreSQL.
+
+## Rodando Localmente
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Crie um arquivo `.env` na raiz do projeto:
+
+```env
+VITE_API_URL=https://to-do-list-pe2n.onrender.com
+```
+
+Inicie o projeto:
+
+```bash
+npm run dev
+```
+
 ## Estrutura
 
 ```txt
