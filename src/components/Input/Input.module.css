@@ -1,3 +1,7 @@
 .Input{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
     border: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }

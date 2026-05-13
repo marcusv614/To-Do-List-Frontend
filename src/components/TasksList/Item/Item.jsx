@@ -6,6 +6,8 @@ const Item = (props) => {
 
   return (
     <li className={style.Item}>
+      <Button title="Up"/>
+      <Button title="Down"/>
       {task}
       <Button title="Delete" />
     </li>
