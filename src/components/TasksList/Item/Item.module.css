@@ -19,6 +19,18 @@
   min-width: 0;
 }
 
+.EditForm {
+  display: flex;
+  flex: 1;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.EditForm input {
+  flex: 1;
+  min-width: 0;
+}
+
 .TaskActions {
   display: flex;
   gap: 0.5rem;

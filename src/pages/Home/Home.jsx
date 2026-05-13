@@ -10,7 +10,7 @@ import {
 
 const Home = () => {
   const [tasksArray, setTasksArray] = useState([]);
-  const [editingTask, setEditingTask] = useState(null);
+  const [editingTaskId, setEditingTaskId] = useState(null);
   const taskRefs = useRef({});
 
   const animateTaskMovement = (previousPositions) => {
@@ -62,34 +62,51 @@ const Home = () => {
     }
   }, []);
 
-  const saveTask = async (taskTitle) => {
+  const createTask = async (taskTitle) => {
     const taskData = {
       title: taskTitle,
-      completed: editingTask?.completed ?? false,
+      completed: false,
     };
 
     try {
-      if (editingTask) {
-        await putTask(editingTask.id, taskData);
-        setEditingTask(null);
-      } else {
-        await postTask(taskData);
-      }
-
+      await postTask(taskData);
       await loadTasks();
     } catch (error) {
-      console.error("Error saving task: ", error);
+      console.error("Error creating task: ", error);
+    }
+  };
+
+  const updateTaskTitle = async (task, taskTitle) => {
+    const taskData = {
+      ...task,
+      title: taskTitle,
+    };
+
+    try {
+      await putTask(task.id, taskData);
+      setTasksArray((currentTasks) =>
+        currentTasks.map((currentTask) =>
+          currentTask.id === task.id ? taskData : currentTask
+        )
+      );
+      setEditingTaskId(null);
+    } catch (error) {
+      console.error("Error updating task: ", error);
     }
   };
 
   const removeTask = async (taskId) => {
     try {
       await deleteTask(taskId);
-      await loadTasks();
+      setTasksArray((currentTasks) =>
+        currentTasks.filter((task) => task.id !== taskId)
+      );
 
-      if (editingTask?.id === taskId) {
-        setEditingTask(null);
+      if (editingTaskId === taskId) {
+        setEditingTaskId(null);
       }
+
+      await loadTasks();
     } catch (error) {
       console.error("Error deleting task: ", error);
     }
@@ -131,18 +148,16 @@ const Home = () => {
 
   return (
     <main className={style.Home}>
-      <TaskForm
-        key={editingTask?.id ?? "new-task"}
-        editingTask={editingTask}
-        onCancelEdit={() => setEditingTask(null)}
-        onSaveTask={saveTask}
-      />
+      <TaskForm onCreateTask={createTask} />
       <TasksList
         tasksArray={tasksArray}
-        editTask={setEditingTask}
+        cancelEdit={() => setEditingTaskId(null)}
+        editingTaskId={editingTaskId}
+        editTask={setEditingTaskId}
         removeTask={removeTask}
         moveTaskUp={moveTaskUp}
         moveTaskDown={moveTaskDown}
+        updateTaskTitle={updateTaskTitle}
         taskRefs={taskRefs}
       />
     </main>

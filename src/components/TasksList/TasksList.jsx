@@ -3,10 +3,13 @@ import { Item } from "../../components";
 
 const TasksList = ({
   tasksArray,
+  cancelEdit,
+  editingTaskId,
   editTask,
   removeTask,
   moveTaskUp,
   moveTaskDown,
+  updateTaskTitle,
   taskRefs,
 }) => {
   return tasksArray.length > 0 ? (
@@ -18,10 +21,13 @@ const TasksList = ({
             taskRefs.current[item.id] = element;
           }}
           task={item}
-          editTask={() => editTask(item)}
+          cancelEdit={cancelEdit}
+          editTask={() => editTask(item.id)}
+          isEditing={editingTaskId === item.id}
           removeTask={() => removeTask(item.id)}
           moveUp={() => moveTaskUp(index)}
           moveDown={() => moveTaskDown(index)}
+          updateTaskTitle={(taskTitle) => updateTaskTitle(item, taskTitle)}
         />
       ))}
     </ul>

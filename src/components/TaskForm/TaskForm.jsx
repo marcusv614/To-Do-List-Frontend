@@ -4,24 +4,23 @@ import pencilIcon from "../../assets/—Pngtree—pixel art pencil icon design_8
 import style from "./TaskForm.module.css";
 import { useState } from "react";
 
-const TaskForm = ({ editingTask, onCancelEdit, onSaveTask }) => {
-  const [taskTitle, setTaskTitle] = useState(editingTask?.title ?? "");
-  const isEditing = Boolean(editingTask);
+const TaskForm = ({ onCreateTask }) => {
+  const [taskTitle, setTaskTitle] = useState("");
 
-  const handleSaveTask = async (event) => {
+  const handleCreateTask = async (event) => {
     event.preventDefault();
 
     if (!taskTitle.trim()) {
       return;
     }
 
-    await onSaveTask(taskTitle.trim());
+    await onCreateTask(taskTitle.trim());
     setTaskTitle("");
   };
 
   return (
     <>
-      <form className={style.TaskForm} onSubmit={handleSaveTask}>
+      <form className={style.TaskForm} onSubmit={handleCreateTask}>
         <img
           className={`${style.FormIcon} ${style.LeftIcon}`}
           src={pencilIcon}
@@ -41,18 +40,10 @@ const TaskForm = ({ editingTask, onCancelEdit, onSaveTask }) => {
         />
         <div className={style.FormActions}>
           <Button
-            title={isEditing ? "Save" : "Add"}
-            variant={isEditing ? "edit" : "add"}
+            title="Add"
+            variant="add"
             type="submit"
           />
-          {isEditing && (
-            <Button
-              title="Cancel"
-              variant="cancel"
-              type="button"
-              onClick={onCancelEdit}
-            />
-          )}
         </div>
       </form>
     </>
