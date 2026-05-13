@@ -54,18 +54,3 @@ Inicie o projeto:
 ```bash
 npm run dev
 ```
-
-## Estrutura
-
-```txt
-src/
-  components/
-    Button/
-    Input/
-    TaskForm/
-    TasksList/
-      Item/
-  pages/
-    Home/
-  service/
-```
