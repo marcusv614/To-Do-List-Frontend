@@ -3,32 +3,25 @@ import floppyDiskIcon from "../../assets/—Pngtree—pixel art floppy diskette 
 import pencilIcon from "../../assets/—Pngtree—pixel art pencil icon design_8529404.png";
 import style from "./TaskForm.module.css";
 import { useState } from "react";
-import { postTask } from "../../service/TaskService";
 
-const TaskForm = ({loadTasks}) => {
-  const [taskTitle, setTaskTitle] = useState("");
+const TaskForm = ({ editingTask, onCancelEdit, onSaveTask }) => {
+  const [taskTitle, setTaskTitle] = useState(editingTask?.title ?? "");
+  const isEditing = Boolean(editingTask);
 
-  const handleCreateTask = async (event) => {
+  const handleSaveTask = async (event) => {
     event.preventDefault();
 
-    const taskData = {
-      title: taskTitle,
-      completed: false,
-    };
-
-    try {
-      const response = await postTask(taskData);
-      await loadTasks();
-      console.log("Task Created: ", response.data);
-      setTaskTitle("");
-    } catch (error) {
-      console.error("Error creating task: ", error);
+    if (!taskTitle.trim()) {
+      return;
     }
+
+    await onSaveTask(taskTitle.trim());
+    setTaskTitle("");
   };
 
   return (
     <>
-      <form className={style.TaskForm} onSubmit={handleCreateTask}>
+      <form className={style.TaskForm} onSubmit={handleSaveTask}>
         <img
           className={`${style.FormIcon} ${style.LeftIcon}`}
           src={pencilIcon}
@@ -46,7 +39,21 @@ const TaskForm = ({loadTasks}) => {
           value={taskTitle}
           onChange={(event) => setTaskTitle(event.target.value)}
         />
-        <Button title="Add" variant="add" type="submit" />
+        <div className={style.FormActions}>
+          <Button
+            title={isEditing ? "Save" : "Add"}
+            variant={isEditing ? "edit" : "add"}
+            type="submit"
+          />
+          {isEditing && (
+            <Button
+              title="Cancel"
+              variant="cancel"
+              type="button"
+              onClick={onCancelEdit}
+            />
+          )}
+        </div>
       </form>
     </>
   );

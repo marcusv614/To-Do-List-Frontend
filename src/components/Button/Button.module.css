@@ -85,3 +85,25 @@
   --button-highlight: rgba(255, 255, 255, 0.42);
   --button-shadow-edge: rgb(160, 13, 46);
 }
+
+.edit {
+  --button-top: rgb(181, 116, 255);
+  --button-bottom: rgb(123, 58, 225);
+  --button-border: rgb(99, 42, 190);
+  --button-hover-border: rgb(211, 165, 255);
+  --button-text: rgb(255, 255, 255);
+  --button-text-shadow: rgba(0, 0, 0, 0.32);
+  --button-highlight: rgba(255, 255, 255, 0.42);
+  --button-shadow-edge: rgb(79, 32, 160);
+}
+
+.cancel {
+  --button-top: rgb(255, 255, 255);
+  --button-bottom: rgb(218, 244, 232);
+  --button-border: rgb(121, 199, 164);
+  --button-hover-border: rgb(255, 255, 255);
+  --button-text: rgb(24, 112, 83);
+  --button-text-shadow: rgba(255, 255, 255, 0.34);
+  --button-highlight: rgba(255, 255, 255, 0.8);
+  --button-shadow-edge: rgb(97, 177, 141);
+}

@@ -1,17 +1,32 @@
 import style from "./TasksList.module.css";
-import { Item, Button } from "../../components";
-import { useState, useEffect } from "react";
-import { getTasks } from "../../service/TaskService";
+import { Item } from "../../components";
 
-const TasksList = ({tasksArray}) => {
-
-  return (
-    tasksArray.length >0 ?  (
+const TasksList = ({
+  tasksArray,
+  editTask,
+  removeTask,
+  moveTaskUp,
+  moveTaskDown,
+  taskRefs,
+}) => {
+  return tasksArray.length > 0 ? (
     <ul className={style.TasksList}>
-      {tasksArray.map((item) => (
-        <Item key={item.id} task={item.title} />
+      {tasksArray.map((item, index) => (
+        <Item
+          key={item.id}
+          itemRef={(element) => {
+            taskRefs.current[item.id] = element;
+          }}
+          task={item}
+          editTask={() => editTask(item)}
+          removeTask={() => removeTask(item.id)}
+          moveUp={() => moveTaskUp(index)}
+          moveDown={() => moveTaskDown(index)}
+        />
       ))}
-    </ul>) : (<></>)
-    );
+    </ul>
+  ) : (
+    <></>
+  );
 };
 export { TasksList };

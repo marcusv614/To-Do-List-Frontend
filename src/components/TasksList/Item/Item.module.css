@@ -7,6 +7,7 @@
   border-radius: 8px;
   padding: 0.4rem;
   transition: background-color 180ms ease;
+  will-change: transform;
 }
 
 .Item:hover {
@@ -18,6 +19,8 @@
   min-width: 0;
 }
 
-.DeleteAction {
+.TaskActions {
+  display: flex;
+  gap: 0.5rem;
   margin-left: auto;
 }
