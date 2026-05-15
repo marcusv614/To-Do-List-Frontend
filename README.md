@@ -4,6 +4,8 @@ Aplicação disponível em: https://to-do-list-frontend-sepia.vercel.app/
 
 Frontend de uma aplicação de lista de tarefas desenvolvida com React e Vite. A aplicação permite criar, listar, editar, deletar e reorganizar tasks consumindo uma API Rest (Spring Boot) externa.
 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
 ## Preview
 
 ![Preview da aplicação To Do List](./docs/todo-image.png)
